@@ -173,7 +173,7 @@ class RPC(object):
             total=self._MAX_RETRIES,
             backoff_factor=self._BACKOFF_FACTOR,  # type: ignore
             status_forcelist=self._STATUS_FORCE_LIST,
-            allowed_methods=self._METHOD_ALLOWLIST,
+            method_whitelist=self._METHOD_ALLOWLIST,
         )
 
         adapter = HTTPAdapter(max_retries=retry_strategy)  # type: ignore
